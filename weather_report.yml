@@ -1,0 +1,69 @@
+# weather_report.yml: an ansible playbook for installing weather_report tools.
+#
+# Usage: ansible-playbook weather_report.yml
+#
+# This installs the following tools:
+# - build-essential and python-dev
+# - Adafruit DHT driver
+#   https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/software-install-updated
+# - i2c tools
+# - Fluentd
+# - fluent-logger-python
+# - fluent-plugin-bigquery
+# - weather_report.py
+
+---
+- hosts: raspberrypi
+  remote_user: pi
+  become: true
+  become_method: sudo
+  vars:
+    work_dir: /home/pi
+    dht_dir: "{{ work_dir }}/Adafruit_Python_DHT"
+    gpio_dir: "{{ work_dir }}/Adafruit_Python_GPIO"
+    bme_dir: "{{ work_dir }}/Adafruit_Python_BME280"
+    logger_dir: "{{ work_dir }}/fluent-logger-python"
+    wr_dir: "{{ work_dir }}/raspi"
+  tasks:
+
+    # dev tools and i2c tools
+    - command: apt upgrade
+    - command: apt install build-essential python-dev python-smbus i2c-tools
+
+    # Adafruit DHT drivers
+    - git:
+        repo: 'https://github.com/adafruit/Adafruit_Python_DHT'
+        dest: "{{ dht_dir }}"
+        clone: yes
+    - command: python setup.py install chdir={{ dht_dir }}
+
+    # Adafruit GPIO drivers
+    - git:
+        repo: 'https://github.com/adafruit/Adafruit_Python_GPIO'
+        dest: "{{ gpio_dir }}"
+        clone: yes
+    - command: python setup.py install chdir={{ gpio_dir }}
+
+    # Adafruit BME drivers
+    - git:
+        repo: 'https://github.com/adafruit/Adafruit_Python_BME280'
+        dest: "{{ bme_dir }}"
+        clone: yes
+    - command: python setup.py install chdir={{ bme_dir }}
+
+
+    # Fluentd
+    - command: apt -y install ruby-dev
+    - command: gem install fluentd
+
+    # pip, fluent-logger-python, fluent-plugin-bigquery
+    - command: apt install python-pip
+    - command: pip install fluent-logger
+    - command: fluent-gem install fluent-plugin-bigquery
+    - command: pip install --upgrade google-cloud-pubsub
+
+    # Weather Report python script
+    - git:
+        repo: 'https://github.com/kazunori279/raspi'
+        dest: "{{ wr_dir }}"
+        clone: yes
