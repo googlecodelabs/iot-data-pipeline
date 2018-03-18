@@ -20,6 +20,9 @@ import json
 from google.cloud import pubsub
 from oauth2client.client import GoogleCredentials
 from Adafruit_BME280 import *
+from tendo import singleton
+
+me = singleton.SingleInstance() # will sys.exit(-1) if other instance is running
 
 # constants - change to fit your project and location
 SEND_INTERVAL = 60 #seconds
