@@ -16,7 +16,7 @@ You will build an IoT device (Raspberry Pi) that measures weather data and is re
 
 * [GPIO Hammer Headers](https://www.adafruit.com/product/3413) - $6.50
 
-* [BME280 sensor](https://www.amazon.com/gp/product/B0118XCKTG/) - $9.99
+* [BME280 sensor](https://www.amazon.com/Adafruit-BME280-Temperature-Humidity-Pressure/dp/B013W1AJUY) - $23.89
 
 * [Soldering iron](https://www.amazon.com/gp/product/B074V28ZVS/) (any will do, but this one is nice and includes solder) - $32.99
 
