@@ -40,7 +40,7 @@ Format the SD card and install the NOOBS (New Out Of Box Software) installer by 
 
 Use the breadboard wires to connect the sensor to the Raspberry Pi according to the diagram below.
 
-![alt text](screenshots/wiring.png "Connect the sensor to the Raspberry Pi")
+![alt text](screenshots/wiring1.png "Connect the sensor to the Raspberry Pi")
 
 Raspberry Pi pin -> Sensor connection
 Pin 1 (3.3V) -> VIN
