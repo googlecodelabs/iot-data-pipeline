@@ -28,7 +28,7 @@ The Raspberry Pi Zero W is recommended for this codelab, but a Raspberry Pi 3 Mo
 
 Solder the header pins to the sensor board. 
 
-![alt text](screenshots/pins.png "Solder the header pins to the sensor board")
+![alt text](screenshots/pins1.png "Solder the header pins to the sensor board")
 
 Carefully install the hammer header pins into the Raspberry Pi.
 
@@ -48,7 +48,7 @@ Pin 3 (CPIO2) -> SDA
 Pin 5 (GPIO3) -> SCL
 Pin 9 (Ground) -> GND
 
-![alt text](screenshots/assembly.png "Completed assembly")
+![alt text](screenshots/assembly1.png "Completed assembly")
 
 Connect the monitor (using the mini-HDMI connector), keyboard/mouse (with the USB hub) and finally, power adapter. 
 
@@ -78,7 +78,7 @@ Type in the following command to make certain that the sensor is correctly conne
 
 The result should look like this -- make sure it reads 76.
 
-![alt text](screenshots/detect.png "Check the sensor connection")
+![alt text](screenshots/detect1.png "Check the sensor connection")
 
 An all 0 result indicates that the sensor isn’t being read by the Raspberry Pi -- check the wiring and connections. 
 
