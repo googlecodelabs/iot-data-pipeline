@@ -6,19 +6,23 @@ You will build an IoT device (Raspberry Pi) that measures weather data and is re
 
 ### Prerequisites
 
-* [Raspberry Pi Zero W starter kit](https://www.canakit.com/raspberry-pi-zero-wireless.html) - $34.95
+[These items can be ordered as a complete kit or as individual parts here](https://www.arrow.com/en/research-and-events/articles/codelabs-builiding-a-serverless-data-pipeline)
 
-* [USB card reader](https://www.amazon.com/Anker-Portable-Reader-RS-MMC-Micro/dp/B006T9B6R2) - $9.99
+* Raspberry Pi Zero W with power supply, SD memory card and case
 
-* [USB hub](https://www.walmart.com/ip/Anker-Ultra-Slim-4-Port-USB-3-0-Data-Hub/178554397) (to allow for connecting a keyboard and mouse into the sole USB port on the Raspberry Pi) - $9.99
+* USB card reader
 
-* [Female-to-female breadboard wires](https://www.adafruit.com/product/266) - $3.95
+* USB hub (to allow for connecting a keyboard and mouse into the sole USB port on the Raspberry Pi)
 
-* [GPIO Hammer Headers](https://www.adafruit.com/product/3413) - $6.50
+* Female-to-female breadboard wires
 
-* [BME280 sensor](https://www.amazon.com/Adafruit-BME280-Temperature-Humidity-Pressure/dp/B013W1AJUY) - $23.89
+* GPIO Hammer Headers
 
-* [Soldering iron](https://www.amazon.com/gp/product/B074V28ZVS/) (any will do, but this one is nice and includes solder) - $32.99
+* BME280 sensor
+
+* Soldering iron
+
+* Solder
 
 * Computer monitor or TV with HDMI input, HDMI cable, keyboard and a mouse
 
