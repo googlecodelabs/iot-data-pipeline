@@ -110,13 +110,21 @@ Add the public key from Google’s package repository so that the Raspberry Pi w
   curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ```
 
-Make sure that all the software on the Raspberry Pi is up to date
+Make sure that all the software on the Raspberry Pi is up to date and install the core Google Cloud SDK
 
 ```
-  sudo apt-get update
+  sudo apt-get update && sudo apt-get install google-cloud-sdk
+```
+NOTE: The installation speed of the SDK is dependent both on the network speed and the Raspberry Pi processor. The Raspberry Pi Zero W can take around 30 minutes to complete the install. If you are using the alternate hardware (Raspberry Pi 3 Model B), install times are typically much faster.
+
+Install the tendo package using the Python package manager (this package is used to prevent check if a script is running more than once and will be used to check on the weather script that is implemented later).
+
+```
+  pip install tendo
 ```
 
-Install the Google Cloud SDK using the Python package manager
+
+Make sure the Google Cloud packages for Python are up to date using the Python package manager
 
 ```
   pip install --upgrade google-cloud
