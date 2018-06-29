@@ -37,15 +37,6 @@ sensorID = "s-Googleplex"
 sensorZipCode = "94043"
 sensorLat = "37.421655"
 sensorLong = "-122.085637"
-
-def publish_message(project_name, topic_name, data):
-  try:
-	publisher = pubsub.PublisherClient()	
-	topic = 'projects/' + project_name + '/topics/' + topic_name
-	publisher.publish(topic, data, placeholder='')
-	print data
-  except:
-	print "There was an error publishing weather data."
 	
 def read_sensor(weathersensor):
     tempF = weathersensor.read_temperature_f()
@@ -77,6 +68,8 @@ def createJSON(id, timestamp, zip, lat, long, temperature, humidity, dewpoint, p
     return json_str
 
 def main():
+  publisher = pubsub.PublisherClient()	
+  topicName = 'projects/' + project + '/topics/' + topic
   last_checked = 0
   while True:
     if time.time() - last_checked > SEND_INTERVAL:
@@ -85,7 +78,11 @@ def main():
       currentTime = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
       s = ", "
       weatherJSON = createJSON(sensorID, currentTime, sensorZipCode, sensorLat, sensorLong, temp, hum, dew, pres)
-      publish_message(project, topic, weatherJSON)
+      try:
+	publisher.publish(topicName, weatherJSON, placeholder='')
+	print weatherJSON
+      except:
+	print "There was an error publishing weather data."
     time.sleep(0.5)
 
 if __name__ == '__main__':
