@@ -161,7 +161,7 @@ Clone the project code that enables the weather sensor
 Copy the sensor driver into the same directory as the remainder of the downloaded software.
 
 ```
-cd third_party/Adafruit_BME280/
+cd iot-data-pipeline/third_party/Adafruit_BME280/
 mv Adafruit_BME280.py ../..
 cd ../..
 ```
