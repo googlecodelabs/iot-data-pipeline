@@ -80,13 +80,13 @@ Type in the following command to make certain that the sensor is correctly conne
   sudo i2cdetect -y 1
 ```
 
-The result should look like this -- make sure it reads 76.
+The result should look like this -- make sure it reads 77.
 
 ![alt text](screenshots/detect1.png "Check the sensor connection")
 
 An all 0 result indicates that the sensor isn’t being read by the Raspberry Pi -- check the wiring and connections. 
 
-A result other than 76 could indicate that the type of sensor doesn’t match the one recommended by this codelab and this will cause the sensor driver to not function correctly. To fix this situation, you’ll need to edit the Adafruit_BME280.py script that is downloaded in the “Install the sensor software and weather script” section below. For example, if the result is showing 74, you will need to change the BME280_I2CADDR to 0x74.
+A result other than 77 could indicate that the type of sensor doesn’t match the one recommended by this codelab and this will cause the sensor driver to not function correctly. To fix this situation, you’ll need to edit the Adafruit_BME280.py script that is downloaded in the “Install the sensor software and weather script” section below. For example, if the result is showing 76, you will need to change the BME280_I2CADDR to 0x76.
 
 ### Install the Google Cloud SDK
 
