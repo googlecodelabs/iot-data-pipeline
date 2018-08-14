@@ -128,6 +128,7 @@ Make sure the Google Cloud packages for Python are up to date using the Python p
 
 ```
   sudo pip install --upgrade google-cloud-pubsub
+  sudo pip install --upgrade oauth2client
 ```
 
 The installation speed of the SDK is dependent both on the network speed and the Raspberry Pi processor. The Raspberry Pi Zero W can take around 30 minutes to complete the install. If you are using the alternate hardware (Raspberry Pi 3 Model B), install times are typically much faster.
