@@ -1,0 +1,1 @@
+sensorID:STRING,timecollected:TIMESTAMP,zipcode:INTEGER,latitude:FLOAT,longitude:FLOAT,temperature:FLOAT,humidity:FLOAT,dewpoint:FLOAT,pressure:FLOAT
